@@ -98,7 +98,8 @@ def recieve_file(client_socket, metadata):
 
 if __name__ == "__main__":
     BUFFER_SIZE = 1024
-    ADDRESS = ("localhost", 5000)
+    ip = input("Enter server ip address: ")
+    ADDRESS = (ip, 5000)
     CLIENT_SOCKET = socket(AF_INET, SOCK_STREAM)
     connect_server(CLIENT_SOCKET, ADDRESS)
     Thread(target = recieve, args = (CLIENT_SOCKET,)).start()
